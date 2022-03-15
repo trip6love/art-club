@@ -17,7 +17,7 @@ const postSchema = new Schema(
       maxlength: 280
     },
     postImage: {
-        type: URL,
+        type: String,
         required: false
     },
     createdAt: {
