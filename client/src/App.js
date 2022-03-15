@@ -52,6 +52,7 @@ function App() {
         <ApolloProvider client={client}>
         <div>
             <Header />
+            <Navbar />
             <Artboard />
             <Footer />
             
