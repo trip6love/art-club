@@ -10,7 +10,7 @@ db.once('open', async () => {
   // create user data
   const userData = [];
 
-  for (let i = 0; i < 50; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     const username = faker.internet.userName();
     const email = faker.internet.email(username);
     const password = faker.internet.password();
@@ -22,7 +22,7 @@ db.once('open', async () => {
 
   // create post
   let createdPosts = [];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 10; i += 1) {
     const postTitle = faker.lorem.words(1);
     const postText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 

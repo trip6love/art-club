@@ -1,5 +1,26 @@
 import React, { useState } from 'react';
+//intergrating Apollo to front-end
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+
+import Account from './pages/Account';
+import Artboard from './pages/ArtBoard';
+import Login from './pages/Login';
+import Logout from './pages/Logout';
+import Post from './pages/Post';
+import SignUp from './pages/SignUp';
+
+const httpLink = createHttpLink({
+    uri: 'http://localhost:3001/graphql',
+  });
+  
+  const client = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache(),
+});
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Login');
@@ -23,21 +44,19 @@ function App() {
         if (currentPage === 'Account') {
             return <Account />
         }
-        if (currentPage === 'Favorites') {
-            return <Favorites />
-        }
     };
 
     const handlePageChange = (page) => setCurrentPage (page);
 
     return (
+        <ApolloProvider client={client}>
         <div>
             <Header />
-            <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
+            <Artboard />
             <Footer />
             
         </div>
+        </ApolloProvider>
     )
 }
 
