@@ -23,6 +23,9 @@ function App() {
         if (currentPage === 'Account') {
             return <Account />
         }
+        if (currentPage === 'Favorites') {
+            return <Favorites />
+        }
     };
 
     const handlePageChange = (page) => setCurrentPage (page);
