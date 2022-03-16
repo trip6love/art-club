@@ -32,6 +32,17 @@ function Navbar ({ currentPage, handlePageChange}) {
                 >
                     Logout
                 </a>
+                <li>
+                <a href="#signup"
+                    onClick={() => handlePageChange('SignUp')}
+                    className={currentPage === 'SignUp' ? 'nav-item-active' : 'nav-item'}
+                >
+                    Sign Up
+                </a>
+
+            
+            </li>
+            
             </li>
         </ul>
 
