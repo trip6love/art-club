@@ -16,7 +16,7 @@ const typeDefs = gql`
     _id: ID
     postTitle: String
     postText: String
-    CreatedAt: String
+    createdAt: String
     username: String
     commentCount: Int
     comments: [Comment]

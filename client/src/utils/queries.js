@@ -4,17 +4,17 @@ import { gql } from '@apollo/client';
 export const QUERY_POSTS = gql`
     query posts($username: String){
         posts(username: $username) {
-        _id
-        postTitle
-        postText
-        CreatedAt
-        username
-        commentCount
-        comments {
             _id
+            postTitle
+            postText
             createdAt
             username
-            commentBody
+            commentCount
+            comments {
+                _id
+                createdAt
+                username
+                commentBody
             }
         }
     }
@@ -26,7 +26,7 @@ export const QUERY_POST = gql`
             _id
             postTitle
             postText
-            CreatedAt
+            createdAt
             username
             commentCount
             comments {
@@ -46,7 +46,7 @@ export const QUERY_USER = gql`
             _id
             username
             email
-            posts{
+            posts {
                 _id
                 postTitle
                 postText

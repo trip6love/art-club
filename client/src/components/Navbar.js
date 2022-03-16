@@ -6,10 +6,9 @@ function Navbar ({ currentPage, handlePageChange}) {
     return(
         <nav>
             <Link to="/">Art Club</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-            <Link to="/logout">Logout</Link>
-            <Link to="/account">My Account</Link>
+            <Link to="/profile">My Profile</Link>
+            <Link to="/">Art Board</Link>
+            <Link to="/">Log Out</Link>
         </nav>
     )
 }

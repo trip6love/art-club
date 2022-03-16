@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //returns all the comments for a post
 const CommentList = ({ comments }) => {
@@ -8,15 +8,19 @@ const CommentList = ({ comments }) => {
         <div className="card-header">
             <span className="text-light">Comments</span>
         </div>
+
         <div className="card-body">
             {comments &&
             comments.map(comment => (
                 <p className="pill mb-3" key={comment._id}>
-                {comment.commentBody} {'// '}
-                {comment.username}{'// '} {comment.createdAt}
+                  {comment.commentBody} {'// '}
+                  <Link to={`/profile/${comment.username}`} style={{ fontWeight: 700}}>
+                    {comment.username} on {comment.createdAt}
+                  </Link>
                 </p>
             ))}
         </div>
+
     </div>
   );
 };
