@@ -52,6 +52,8 @@ function App() {
         <ApolloProvider client={client}>
         <div>
             <Header />
+            <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
+            {renderPage()}
             <Artboard />
             <Footer />
             
