@@ -4,6 +4,8 @@ import PostList from '../components/PostList';
 import { useQuery } from '@apollo/client';
 import { QUERY_POSTS } from '../utils/queries';
 
+//Displays All of the post an other information
+
 const Artboard = () => {
     // use useQuery hook to make query request
     const { loading, data } = useQuery(QUERY_POSTS);
@@ -17,6 +19,7 @@ const Artboard = () => {
                 {loading ? (
                 <div>Loading...</div>
                 ) : (
+                //calls poslist componete to view all post
                 <PostList posts={posts} title="Some Posts ..." />
                 )}
             </div>

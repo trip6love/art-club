@@ -1,51 +1,15 @@
+import { Link } from 'react-router-dom';
+
+//navgiation component that sets each page to have a unique URL
+//This is a front-end routing using React Router Library
 function Navbar ({ currentPage, handlePageChange}) {
     return(
-        <ul className="nav">
-            <li>
-                <a href="#account"
-                    onClick={() => handlePageChange('Account')}
-                    className={currentPage === 'Account' ? 'nav-item-active' : 'nav-item'}
-                >
-                    Profile
-                </a>
-            </li>
-            <li>
-                <a href="#post"
-                    onClick={() => handlePageChange('Post')}
-                    className={currentPage === 'Post' ? 'nav-item-active' : 'nav-item'}
-                >
-                    Post
-                </a>
-            </li>
-            <li>
-                <a href="#artboard"
-                    onClick={() => handlePageChange('Artboard')}
-                    className={currentPage === 'Artboard' ? 'nav-item-active' : 'nav-item'}
-                >
-                    Artboard
-                </a>
-            </li>
-            <li>
-                <a href="#logout"
-                    onClick={() => handlePageChange('Logout')}
-                    className={currentPage === 'Logout' ? 'nav-item-active' : 'nav-item'}
-                >
-                    Logout
-                </a>
-                <li>
-                <a href="#signup"
-                    onClick={() => handlePageChange('SignUp')}
-                    className={currentPage === 'SignUp' ? 'nav-item-active' : 'nav-item'}
-                >
-                    Sign Up
-                </a>
-
-            
-            </li>
-            
-            </li>
-        </ul>
-
+        <nav>
+            <Link to="/">Art Club</Link>
+            <Link to="/profile">My Profile</Link>
+            <Link to="/">Art Board</Link>
+            <Link to="/">Log Out</Link>
+        </nav>
     )
 }
 
