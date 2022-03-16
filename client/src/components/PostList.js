@@ -1,5 +1,6 @@
 import React from 'react';
 
+//This returns all of the post
 const PostList = ({ posts, title }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;

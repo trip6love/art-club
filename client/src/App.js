@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 //intergrating Apollo to front-end
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+//React Router Import
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Navbar from './components/Navbar';
 
 import Account from './pages/Account';
 import Artboard from './pages/ArtBoard';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
-import Post from './pages/Post';
 import SignUp from './pages/SignUp';
 
 const httpLink = createHttpLink({
@@ -23,41 +23,22 @@ const httpLink = createHttpLink({
 });
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('Login');
-
-  const renderPage = () => {
-        if (currentPage === 'Login') {
-          return <Login />
-        }
-        if (currentPage === 'Artboard') {
-            return <Artboard />
-        }
-        if (currentPage === 'SignUp') {
-            return <SignUp />
-        }
-        if (currentPage === 'Post') {
-            return <Post />
-        }
-        if (currentPage === 'Logout') {
-            return <Logout />
-        }
-        if (currentPage === 'Account') {
-            return <Account />
-        }
-    };
-
-    const handlePageChange = (page) => setCurrentPage (page);
 
     return (
         <ApolloProvider client={client}>
-        <div>
-            <Header />
-            <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
-            <Artboard />
-            <Footer />
-            
-        </div>
+            <Router>
+                <Header />
+                    <Switch>
+                        <div>
+                        <Route exact path='/' component={Artboard} />
+                        <Route exact path='/login' component={Login} />
+                        <Route exact path='/signup' component={SignUp} />
+                        <Route exact path='/logout' component={Logout} />
+                        <Route exact path='/account' component={Account} />
+                        </div>
+                    </Switch>
+                <Footer />
+            </Router>
         </ApolloProvider>
     )
 }
