@@ -8,8 +8,8 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    commentCount: Int
-    comments: [Comment]
+    postCount: Int
+    posts: [Post]
   }
 
   type Post {

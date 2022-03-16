@@ -49,7 +49,7 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('postcount').get(function(){
+userSchema.virtual('postCount').get(function(){
     return this.posts.length;
 });
 
