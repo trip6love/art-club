@@ -56,3 +56,40 @@ export const QUERY_USER = gql`
         }
     }
 `;
+
+//get all logged in user data
+export const QUERY_ME = gql`
+    {
+        me {
+            _id
+            username
+            email
+            postCount
+            posts{
+                _id
+                postTitle
+                postText
+                createdAt
+                commentCount
+                comments {
+                    _id
+                    createdAt
+                    commentBody
+                    username
+                }
+            }
+        }
+    }
+`;
+
+//get portion logged in user data
+export const QUERY_ME_BASIC = gql`
+    {
+        me {
+            _id
+            username
+            email
+            postCount
+        }
+    }
+`;

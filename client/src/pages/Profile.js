@@ -1,28 +1,41 @@
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 import PostList from '../components/PostList';
 
 import { useQuery } from '@apollo/client';
-import { QUERY_USER } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 
+// url: /profile/<username> will display other profiles
+//url: /profile will display loggedin user profile
 const Profile = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(QUERY_USER, {
+  //checks to see what url is clicked on
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam }
   });
 
-  const user = data?.user || {};
+  const user = data?.me || data?.user || {};
+
+  //redirects if they are logged in and url /profile/<loggedinuser>
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Redirect to="/profile" />; 
+  }
 
   if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (!user?.username) {
+    return <Redirect to="/" />;
   }
 
   return (
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {user.username}'s profile.
+        Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
       </div>
 
