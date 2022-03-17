@@ -11,10 +11,12 @@ const Artboard = () => {
     const { loading, data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
   
-    return (
+    return (   
+        
         <main>
-            <div className="flex-row justify-space-between">
-            <div className="col-12 mb-3">
+           
+            <div class="">
+            <div class="">
                 {loading ? (
                 <div>Loading...</div>
                 ) : (
