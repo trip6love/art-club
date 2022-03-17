@@ -1,30 +1,27 @@
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-import { useState } from 'react';
-import validateEmail  from '../utils/helpers';
-
+//Signup page
 function SignUp () {
 
-    const [email, Email] = useState('');
-    const [name, Name] = useState('');
-    const [password, Password] = useState('');
+    const [formState, setFormState] = useState({ username: '', email: '', password: '' });
 
+    // useMutation prepares JS function that wraps around our muttation code and returns it to us
+    // returns in the form of addUser, ability to check errors
     const [addUser, { error }] = useMutation(ADD_USER);
 
     const InputChange = (event) => {
-        const { target } = event;
-        const inputType = target.name;
-        const inputValue = target.value;
+        const { name, value } = event.target;
 
-        if (inputType === 'name') {
-            Name(inputValue);
-        } else if (inputType === 'email') {
-            Email(inputValue);
-        } else if (inputType === 'password') {
-            Password(inputValue);
-        } 
+        setFormState({
+        ...formState,
+        [name]: value,
+        });
     };
+
+    //submit form
     const formSubmit = async event => {
         event.preventDefault();
 
@@ -34,7 +31,8 @@ function SignUp () {
             const { data } = await addUser({
             variables: { ...formState }
             });
-            console.log(data);
+            //takes token and adds to localstorage
+            Auth.login(data.addUser.token);
         } catch (e) {
             console.error(e);
         }
@@ -43,42 +41,40 @@ function SignUp () {
     return (
         <div className="">
             <form className = "">
+
             <h1 className=" ">Sign Up!</h1>
-                <p className="input-label">Name: </p>
-                <input className="input-form"
-                value={name}
-                name="name"
-                onChange={InputChange}
-                type="name"
-                placeholder="name"
-            />
-                
-                <p className="input-label">Email:</p>
-                <input className="input-form"
-                value={email}
-                name="email"
-                onChange={InputChange}
-                type="email"
-                placeholder="email"
-            />
+                <input 
+                    className="input-form"
+                    placeholder="User Name"
+                    value={formState.username}
+                    name="username"
+                    onChange={InputChange}
+                    type="username"
 
-                
-                 
-                <p className="input-label">Password</p>
-                <textarea className="input-form"
-                value={password}
-                name="password"
-                onChange={InputChange}
-                type="password"
-                placeholder="password"
             />
-
                 
+                <input 
+                    className="input-form"
+                    value={formState.email}
+                    name="email"
+                    onChange={InputChange}
+                    type="email"
+                    placeholder="email@email.com"
+            />
+         
+                <textarea 
+                    className="input-form"
+                    value={formState.password}
+                    name="password"
+                    onChange={InputChange}
+                    type="password"
+                    placeholder="**********"
+            />               
              
-            <button className="btn" type="button" onClick={formSubmit}>
-                Submit!
-            </button>
+            <button className="btn" type="button" onClick={formSubmit}>Submit!</button>
             </form>
+
+            {error && <div>Sign up failed</div>}
         </div>
     )
 }

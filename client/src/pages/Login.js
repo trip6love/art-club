@@ -1,17 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 //Login page
 const Login = () => {
-  
+
+    const [formState, setFormState] = useState({ email: '', password: '' });
+
+    const [login, { error }] = useMutation(LOGIN_USER);
+
+    // submit form
+    const formSubmit = async event => {
+        event.preventDefault();
+    
+        try {
+        const { data } = await login({
+            variables: { ...formState }
+        });
+    
+        Auth.login(data.login.token);
+        } catch (e) {
+        console.error(e);
+        }
+    };
+
+    const InputChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+        ...formState,
+        [name]: value,
+        });
+    };
+
     return (
-        <main>
-            <div className="flex-row justify-space-between">
-                <div className="col-12 mb-3">
-                    <p> Login Form will go here </p>
-                    <p> Button to sign in here </p>
-                </div>
-            </div>
-        </main>
+        <div className="">
+            <form className = "">
+
+            <h1 className=" ">Login</h1>
+                <input 
+                className="input-form"
+                value={formState.email}
+                name="email"
+                onChange={InputChange}
+                type="email"
+                placeholder="email@email.com"
+            />
+                <textarea 
+                className="input-form"
+                value={formState.password}
+                name="password"
+                onChange={InputChange}
+                type="password"
+                placeholder="*********"
+            />               
+             
+            <button className="btn" type="button" onClick={formSubmit}>Submit</button>
+            </form>
+
+            {error && <div>Login failed</div>}
+        </div>
     );
 };
 

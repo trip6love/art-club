@@ -10,7 +10,6 @@ const Artboard = () => {
     // use useQuery hook to make query request
     const { loading, data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
-    console.log(posts);
   
     return (
         <main>
