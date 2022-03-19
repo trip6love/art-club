@@ -5,7 +5,8 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div>
+    
+    <div className='homepage'>
       <h1 className='logo'>Logo will go here</h1>
       <Link
         to={`/login`}
@@ -17,8 +18,8 @@ const Home = () => {
 
         <Link
         to={`/signup`}
-        style={{ fontWeight: 700}}
-        className=""
+        
+        className="signup"
         >
         SignUp Here
         </Link>

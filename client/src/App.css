@@ -1,3 +1,19 @@
+.header {
+    color: green;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer {
+    color: green;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 300px;
+}
+
 .login {
     padding: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -5,19 +21,22 @@
     
 }
 
+.signup {
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
 .logo {
     color: green;
     font-size: 60px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 25%;
-
-    
-    
+    text-align: center;
 }
 
-.header {
-    color: green;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 40%;
+.homepage {
+    text-align: center;
+    padding: 50px;
 }
+
 
