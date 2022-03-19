@@ -6,11 +6,11 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <h1>Logo will go here</h1>
+      <h1 className='logo'>Logo will go here</h1>
       <Link
         to={`/login`}
-        style={{ fontWeight: 700}}
-        className=""
+        
+        className="login"
         >
         Login Here
         </Link>
