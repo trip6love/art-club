@@ -27,12 +27,42 @@ body {
       #476098 66.666%, 
       #476098 83.333%, 
       #A7489B 83.333%);
-    background-size: 57%;
+    background-size: 45%;
     background-repeat: repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     cursor: pointer;
   }
+
+.a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 120px;
+}
+.r {
+    font-family: cursive;
+    font-size: 70px;
+}
+.t {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 90px;
+}
+.c {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 120px;
+}
+.l {
+    font-family:fantasy;
+    font-size: 90px;
+}
+.u {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 90px;
+}
+.b {
+    font-family: monospace;
+    font-size: 110px;
+
+}
 
 .footer {
     color: green;
