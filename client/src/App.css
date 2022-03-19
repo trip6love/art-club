@@ -1,10 +1,38 @@
+body {
+    background-color: #EDDDD4;
+  }
 .header {
-    color: green;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 70px;
-    padding: 20px;
-    text-align: center;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 800;
+    font-size: 100px;
+    width: 5em;
+    line-height: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    margin-top: calc(50vh - 1em);
+  
 }
+.rainbow-text {
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(
+      #CA4246 16.666%, 
+      #E16541 16.666%, 
+      #E16541 33.333%, 
+      #F18F43 33.333%, 
+      #F18F43 50%, 
+      #8B9862 50%, 
+      #8B9862 66.666%, 
+      #476098 66.666%, 
+      #476098 83.333%, 
+      #A7489B 83.333%);
+    background-size: 57%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+  }
 
 .footer {
     color: green;
