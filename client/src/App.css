@@ -117,23 +117,25 @@ body {
 
 /* BUTTONS and LOGIN */
 
+
 .btn {
     
     border: none;
-    background-color: #4CAF50;
-    padding: 15px 32px;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px;
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
+    font-weight: bolder;
     
 }
 
 .btn:hover {
-    background-color: white; /* Green */
+    background-color: #E16541; /* Green */
     color: black;
 }
 
@@ -142,10 +144,20 @@ body {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 50px
 }
-
+p {
+    padding: 30px;
+}
 .input-form {
-    align-items: center;
-    text-align: center;
+    border: 5px;
+    border-radius: 5px;
+    border-color: #461c01;
+    font-size: 35px;
+    padding: 10px;
     
+    
+}
+
+.form-login {
+    align-items: center;
 }
 

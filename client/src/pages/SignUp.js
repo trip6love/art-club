@@ -39,43 +39,50 @@ function SignUp () {
     };
 
     return (
-        <div className="">
-            <form className = "">
+        <body> 
+            <div align="center">
+                <form className = "">
 
-            <h1 className=" ">Sign Up!</h1>
-                <input 
-                    className="input-form"
-                    placeholder="User Name"
-                    value={formState.username}
-                    name="username"
-                    onChange={InputChange}
-                    type="username"
+                    <h1 className=" ">Sign Up!</h1>
+                        <p>
+                            <input 
+                                className="input-form"
+                                placeholder="User Name"
+                                value={formState.username}
+                                name="username"
+                                nChange={InputChange}
+                                type="text"
 
-            />
-                
-                <input 
-                    className="input-form"
-                    value={formState.email}
-                    name="email"
-                    onChange={InputChange}
-                    type="email"
-                    placeholder="email@email.com"
-            />
-         
-                <textarea 
-                    className="input-form"
-                    value={formState.password}
-                    name="password"
-                    onChange={InputChange}
-                    type="password"
-                    placeholder="**********"
-            />               
-             
-            
-            </form>
+                            />
+                        </p>
+                        <p> 
+                            <input 
+                                className="input-form"
+                                value={formState.email}
+                                name="email"
+                                onChange={InputChange}
+                                type="text"
+                                placeholder="Enter a email"
+                            />
+                        </p>
+
+                        <p>
+                            <input 
+                                className="input-form"
+                                value={formState.password}
+                                name="password"
+                                onChange={InputChange}
+                                type="password"
+                                placeholder="Password"
+                            />               
+                        </p>
+           
+                </form>
+
             <button className="btn" type="button" onClick={formSubmit}>Submit!</button>
             {error && <div>Sign up failed</div>}
         </div>
+        </body>
     )
 }
 

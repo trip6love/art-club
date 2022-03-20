@@ -15,7 +15,7 @@ const Home = () => {
       <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"></link>
       <Link
         to={`/login`}
-        
+        type="button"
         className="login"
         >
         Login Here
@@ -23,7 +23,7 @@ const Home = () => {
 
         <Link
         to={`/signup`}
-        
+        type="button"
         className="signup"
         >
         SignUp Here
