@@ -7,7 +7,12 @@ const Home = () => {
   return (
     
     <div className='homepage'>
-      <h1 className='logo'>Logo will go here</h1>
+      <div className='paint'>
+      <h1 className='brush fa fa-paint-brush'></h1>
+      </div>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"></link>
       <Link
         to={`/login`}
         
