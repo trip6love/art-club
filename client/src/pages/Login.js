@@ -38,7 +38,7 @@ const Login = () => {
         <div className="">
             <form className = "">
 
-            <h1 className=" ">Login</h1>
+            <h1 className="login-header">Login</h1>
                 <input 
                 className="input-form"
                 value={formState.email}
@@ -56,9 +56,8 @@ const Login = () => {
                 placeholder="*********"
             />               
              
-            <button className="btn" type="button" onClick={formSubmit}>Submit</button>
             </form>
-
+            <button className="btn" type="button" onClick={formSubmit}>Submit</button>
             {error && <div>Login failed</div>}
         </div>
     );

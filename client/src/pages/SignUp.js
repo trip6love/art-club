@@ -71,9 +71,9 @@ function SignUp () {
                     placeholder="**********"
             />               
              
-            <button className="btn" type="button" onClick={formSubmit}>Submit!</button>
+            
             </form>
-
+            <button className="btn" type="button" onClick={formSubmit}>Submit!</button>
             {error && <div>Sign up failed</div>}
         </div>
     )

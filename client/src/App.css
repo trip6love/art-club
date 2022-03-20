@@ -30,7 +30,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     cursor: pointer;
-  }
+}
 
 .a {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
@@ -67,7 +67,8 @@ body {
 /* BEGIN LOGO */
 .paint {
     color: whitesmoke;
-    font-size: 100px;
+    font-size: 200px;
+    
 }
 .brush {   
     background: linear-gradient(to bottom, #461c01 60%,#7091da 90%);
@@ -75,13 +76,14 @@ body {
     -moz-background-clip: text;
     background-clip: text;
    -webkit-text-fill-color:transparent;
-   }
+   
+}
 
 
 /* END LOGO*/
 
 .footer {
-    color: green;
+    color: black;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 40px;
     text-align: center;
@@ -110,7 +112,40 @@ body {
 
 .homepage {
     text-align: center;
-    padding: 50px;
+    
 }
 
+/* BUTTONS and LOGIN */
+
+.btn {
+    
+    border: none;
+    background-color: #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    
+}
+
+.btn:hover {
+    background-color: white; /* Green */
+    color: black;
+}
+
+.login-header {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px
+}
+
+.input-form {
+    align-items: center;
+    text-align: center;
+    
+}
 
