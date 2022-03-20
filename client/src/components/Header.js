@@ -12,6 +12,7 @@ function Header () {
             <span className='u'>u</span>
             <span className='b'>b</span>
             </h1>
+           
             <Navbar></Navbar>
         </header>
         
