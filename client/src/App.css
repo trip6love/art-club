@@ -123,7 +123,9 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-weight: bolder;
+    
 }
+
 .btnFooter:hover {
     background-color: #E16541; /* Green */
     color: black;
@@ -135,6 +137,7 @@ body {
     font-size: 40px;
     text-align: center;
     padding-bottom: 50px;
+    padding: flex;
 }
 
 .ourCreators {
@@ -148,7 +151,7 @@ body {
 /* BEGIN LOGO */
 .paint {
     color: whitesmoke;
-    font-size: 300px;
+    font-size: 200px;
     
 }
 .brush {   
