@@ -1,0 +1,256 @@
+body {
+    background-color: #EDDDD4;
+  }
+
+/* BEGIN HEADER */
+.header {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 800;
+    font-size: 100px;
+    text-align: center;
+
+  
+}
+.rainbow-text {
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(
+      #CA4246 16.666%, 
+      #E16541 16.666%, 
+      #E16541 33.333%, 
+      #F18F43 33.333%, 
+      #F18F43 50%, 
+      #8B9862 50%, 
+      #8B9862 66.666%, 
+      #476098 66.666%, 
+      #476098 83.333%, 
+      #A7489B 83.333%);
+    background-size: 11%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
+.rainbow-text-footer {
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(
+      #CA4246 16.666%, 
+      #E16541 16.666%, 
+      #E16541 33.333%, 
+      #F18F43 33.333%, 
+      #F18F43 50%, 
+      #8B9862 50%, 
+      #8B9862 66.666%, 
+      #476098 66.666%, 
+      #476098 83.333%, 
+      #A7489B 83.333%);
+    background-size: 11%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
+
+.a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 140px;
+}
+.r {
+    font-family: cursive;
+    font-size: 90px;
+}
+.t {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 110px;
+}
+.c {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 140px;
+}
+.l {
+    font-family:fantasy;
+    font-size: 110px;
+}
+.u {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 110px;
+}
+.b {
+    font-family: monospace;
+    font-size: 130px;
+
+}
+/* footer */
+.aa {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 80px;
+}
+.rr {
+    font-family: cursive;
+    font-size: 30px;
+}
+.tt {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+.cc {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 80px;
+}
+.ll {
+    font-family:fantasy;
+    font-size: 50px;
+}
+.uu {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+.bb {
+    font-family: monospace;
+    font-size: 70px;
+
+}
+/* END HEADER */
+
+/* BEGIN LOGO */
+.paint {
+    color: whitesmoke;
+    font-size: 300px;
+    
+}
+.brush {   
+    background: linear-gradient(to bottom, #461c01 60%,#7091da 90%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color:transparent;
+   top: -150px;
+   position: relative;
+    
+   
+}
+
+
+/* END LOGO*/
+
+.footer {
+    
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    
+    
+}
+
+/*footer { 
+    background-color: rgba(243, 198, 99, 0.363);
+    
+}
+*/
+.login {
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    position: relative;
+    top: -150px;
+}
+
+.signup {
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    position: relative;
+    top: -150px ;
+}
+
+.logo {
+    color: green;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.homepage {
+    text-align: center;
+    
+}
+
+/* BUTTONS and LOGIN */
+
+
+.btn {
+    
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    
+}
+
+.btn:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+}
+.signup-header{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px
+}
+
+.login-header {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px
+}
+p {
+    padding: 30px;
+}
+.input-form {
+    border: 5px;
+    border-radius: 5px;
+    border-color: #461c01;
+    font-size: 35px;
+    padding: 10px;
+    
+    
+}
+
+.form-login {
+    align-items: center;
+}
+
+.homebutton {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 25%;
+}
+.homebutton:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+}
+
+/* ERRORS */
+.error {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding-top: 10px;
+
+}

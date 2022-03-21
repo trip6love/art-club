@@ -5,23 +5,25 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Logo will go here</h1>
-      <Link
-        to={`/login`}
-        style={{ fontWeight: 700}}
-        className=""
-        >
-        Login Here
-        </Link>
+    
+    <div className='homepage'>
+      <div className='paint'>
+      <h1 className='brush fa fa-paint-brush'></h1>
+      </div>
 
-        <Link
-        to={`/signup`}
-        style={{ fontWeight: 700}}
-        className=""
-        >
-        SignUp Here
-        </Link>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"></link>
+      <Link to={`/login`} className="login">
+        <button renderAs="button" className='homebutton'>
+          Login 
+        </button>
+      </Link>
+
+      <Link to={`/signup`} className="signup">
+        <button renderAs="button" className='homebutton'>
+        Sign Up
+        </button>
+      </Link>
     </div>
   );
 };

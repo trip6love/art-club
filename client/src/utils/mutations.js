@@ -78,7 +78,6 @@ export const DELETE_COMMENT = gql`
       username
       postTitle
       commentCount
-      }
     }
 `;
 

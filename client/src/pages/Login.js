@@ -35,33 +35,44 @@ const Login = () => {
     };
 
     return (
-        <div className="">
-            <form className = "">
+        <body>
+            <div align="center"> 
+            <form className = "form-login">
 
-            <h1 className=" ">Login</h1>
-                <input 
-                className="input-form"
-                value={formState.email}
-                name="email"
-                onChange={InputChange}
-                type="email"
-                placeholder="email@email.com"
-            />
-                <textarea 
-                className="input-form"
-                value={formState.password}
-                name="password"
-                onChange={InputChange}
-                type="password"
-                placeholder="*********"
-            />               
-             
-            <button className="btn" type="button" onClick={formSubmit}>Submit</button>
+            <h1 className="login-header">Login</h1>
+                <p>
+                    <input 
+                        className="input-form"
+                        value={formState.email}
+                        name="email"
+                        onChange={InputChange}
+                        type="text"
+                        placeholder="Enter a email to login!"
+                    />
+                </p>
+                <p> 
+                    <input 
+                        className="input-form"
+                        value={formState.password}
+                        name="password"
+                        onChange={InputChange}
+                        type="password"
+                        placeholder="Password"
+                    />               
+                </p>   
             </form>
+            </div>
 
-            {error && <div>Login failed</div>}
-        </div>
+            <div align="center"> 
+                <button className="btn" type="button" onClick={formSubmit}>Submit</button>
+            </div>
+            {error && <div className='error'>Login failed</div>}
+        </body>
+
+        
     );
 };
+
+
 
 export default Login;
