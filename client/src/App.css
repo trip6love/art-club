@@ -31,44 +31,92 @@ body {
     -webkit-text-fill-color: transparent; 
     cursor: pointer;
 }
+.rainbow-text-footer {
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(
+      #CA4246 16.666%, 
+      #E16541 16.666%, 
+      #E16541 33.333%, 
+      #F18F43 33.333%, 
+      #F18F43 50%, 
+      #8B9862 50%, 
+      #8B9862 66.666%, 
+      #476098 66.666%, 
+      #476098 83.333%, 
+      #A7489B 83.333%);
+    background-size: 11%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
 
 .a {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-    font-size: 120px;
+    font-size: 140px;
 }
 .r {
     font-family: cursive;
-    font-size: 70px;
+    font-size: 90px;
 }
 .t {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90px;
+    font-size: 110px;
 }
 .c {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 120px;
+    font-size: 140px;
 }
 .l {
     font-family:fantasy;
-    font-size: 90px;
+    font-size: 110px;
 }
 .u {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 90px;
+    font-size: 110px;
 }
 .b {
     font-family: monospace;
-    font-size: 110px;
+    font-size: 130px;
 
 }
+/* footer */
+.aa {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 80px;
+}
+.rr {
+    font-family: cursive;
+    font-size: 30px;
+}
+.tt {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+.cc {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 80px;
+}
+.ll {
+    font-family:fantasy;
+    font-size: 50px;
+}
+.uu {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+.bb {
+    font-family: monospace;
+    font-size: 70px;
 
+}
 /* END HEADER */
 
 /* BEGIN LOGO */
 .paint {
     color: whitesmoke;
-    font-size: 200px;
-    
+    font-size: 300px;
     
 }
 .brush {   
@@ -79,6 +127,7 @@ body {
    -webkit-text-fill-color:transparent;
    top: -150px;
    position: relative;
+    
    
 }
 
@@ -167,3 +216,21 @@ p {
     align-items: center;
 }
 
+.homebutton {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 25%;
+}
+.homebutton:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+}

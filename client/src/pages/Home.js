@@ -14,14 +14,14 @@ const Home = () => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"></link>
       <Link to={`/login`} className="login">
-        <button renderAs="button">
-          Login Here
+        <button renderAs="button" className='homebutton'>
+          Login 
         </button>
       </Link>
 
       <Link to={`/signup`} className="signup">
-        <button renderAs="button">
-        SignUp Here
+        <button renderAs="button" className='homebutton'>
+        Sign Up
         </button>
       </Link>
     </div>
