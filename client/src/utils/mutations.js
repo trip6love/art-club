@@ -25,6 +25,21 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_POST = gql`
+  mutation addPost($postText: String!) {
+    addPost(postText: $postText) {
+      _id
+      postText
+      createdAt
+      username
+      postCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
 //must be logged in to use
 //needs to send the postID to deletePost
 //will return Username and post count
@@ -36,6 +51,22 @@ export const DELETE_POST = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
+      _id
+      commentCount
+      comments {
+        _id
+        commentBody
+        postTitle
+        username
+      }
+    }
+  }
+`;
+
 
 //must be logged in to use
 //needs to send both the postID and commentID 
@@ -49,5 +80,5 @@ export const DELETE_COMMENT = gql`
       commentCount
       }
     }
-  }
 `;
+
