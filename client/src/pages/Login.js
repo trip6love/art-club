@@ -66,7 +66,7 @@ const Login = () => {
             <div align="center"> 
                 <button className="btn" type="button" onClick={formSubmit}>Submit</button>
             </div>
-            {error && <div>Login failed</div>}
+            {error && <div className='error'>Login failed</div>}
         </body>
 
         
