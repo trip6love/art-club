@@ -50,7 +50,7 @@ function SignUp () {
                                 placeholder="User Name"
                                 value={formState.username}
                                 name="username"
-                                nChange={InputChange}
+                                onChange={InputChange}
                                 type="text"
 
                             />
