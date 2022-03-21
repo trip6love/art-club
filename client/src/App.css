@@ -111,6 +111,38 @@ body {
     font-size: 70px;
 
 }
+.btnFooter {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+}
+.btnFooter:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+    cursor: pointer;
+}
+
+.footerPosition {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.ourCreators {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 7px;
+    text-align: center;
+    padding-bottom: -20px;
+}
 /* END HEADER */
 
 /* BEGIN LOGO */
@@ -176,6 +208,7 @@ body {
     
 }
 
+
 /* BUTTONS and LOGIN */
 
 
@@ -198,6 +231,7 @@ body {
 .btn:hover {
     background-color: #E16541; /* Green */
     color: black;
+    cursor: pointer;
 }
 .signup-header{
     text-align: center;
@@ -244,6 +278,7 @@ p {
 .homebutton:hover {
     background-color: #E16541; /* Green */
     color: black;
+    cursor: pointer;
 }
 
 /* ERRORS */
