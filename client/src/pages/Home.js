@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import React from 'react';
 
+
 const Home = () => {
-  return (
-    
+  return ( 
     <div className='homepage'>
       <div className='paint'>
       <h1 className='brush fa fa-paint-brush'></h1>

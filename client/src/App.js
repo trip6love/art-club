@@ -15,6 +15,7 @@ import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import SinglePost from './pages/SinglePost';
 import NoMatch from './pages/NoMatch';
+import museumAPI from './pages/museumAPI';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -54,6 +55,7 @@ function App() {
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path="/profile/:username?" component={Profile} />
                         <Route exact path='/post/:id' component={SinglePost} />
+                        <Route exact path='/museumAPI' component={museumAPI} />
 
                         <Route component={NoMatch} />
                     </Switch>
