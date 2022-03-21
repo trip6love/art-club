@@ -1,8 +1,8 @@
 function Footer()  {
     return(
         <div className="">
-         <header>
-            <h1 className="header rainbow-text-footer">
+         <footer>
+            <h1 className="footer rainbow-text-footer">
             <span className='aa'>A</span>
             <span className='rr'>r</span>
             <span className='tt'>t</span>
@@ -14,7 +14,7 @@ function Footer()  {
             
            
             
-        </header>
+        </footer>
         </div>
     )
 }
