@@ -12,12 +12,25 @@ const logout = event => {
 
 function Navbar ({ currentPage, handlePageChange}) {
     return(
-        <nav>
+        <nav align="center">
             {Auth.loggedIn() ? (
                 <>
-                <Link to="/artboard">Art Board</Link>
-                <Link to="/profile">My Profile</Link>
-                <a href="/" onClick={logout}>Log Out</a>
+                <Link to="/artboard" className='navbaritems'>
+                    <button renderAs="button" className='artboardbtn'>
+                        Art Board
+                    </button>
+                </Link>
+                <Link to="/profile" className='navbaritems'>   
+                    <button renderAs="button" className='profilebtn'>
+                        My Profile
+                    </button>
+                </Link>
+                
+                <a href="/" onClick={logout} className='navbaritems'>
+                    <button renderAs="button" className='logoutbtn'>
+                        Log Out
+                    </button>
+                </a>
                 </>
             ) : (
                 <>

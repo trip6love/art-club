@@ -15,16 +15,16 @@ function Footer()  {
                 <h1>[Our creators] [ © 2022 UNC Coding BootCamp ] </h1>
             </div>
             <div className="footerPosition">
-            <a href="https://github.com/trip6love">
+            <a href="https://github.com/trip6love" className="footeritems">
             <button className="btnFooter">Lane Byers</button>
             </a>
-            <a href="https://github.com/RyleeThomas">
+            <a href="https://github.com/RyleeThomas" className="footeritems">
             <button className="btnFooter">Rylee Thomas</button>
             </a>
-            <a href="https://github.com/trip6love">
+            <a href="https://github.com/trip6love" className="footeritems">
             <button className="btnFooter">Alvin Yearby</button>
             </a>
-            <a href="https://github.com/parkerjustice">
+            <a href="https://github.com/parkerjustice" className="footeritems">
             <button className="btnFooter">Parker Justice</button>
             </a>
             </div>
