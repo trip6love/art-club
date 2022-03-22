@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/art-club', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/art-club'
+, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -13,5 +14,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/art-club', {
   //useCreateIndex: true,
   //useFindAndModify: false
 //});
+//'mongodb://localhost/art-club'
 
 module.exports = mongoose.connection;
