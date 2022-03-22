@@ -6,12 +6,10 @@ const HarvardArt = () => {
     //create state for holding return google api data
     const [ loading, setLoading] = useState(true);
     const [ items, setItems] = useState([]);
-
+    //retrieves the api url and stores the json data into setItems.
     useEffect( async () => {
         try {
-            //const response = await searchArtMuseum();
-    
-            const response = await fetch("https://api.harvardartmuseums.org/object?classification=21&size=30&apikey=d5fa0071-2bef-4273-9a6c-c6fad3b41af9");
+            const response = await fetch("https://api.harvardartmuseums.org/object?classification=21&size=100&apikey=d5fa0071-2bef-4273-9a6c-c6fad3b41af9");
     
             if(!response){
                 throw new Error('Something is wrong');
@@ -23,7 +21,7 @@ const HarvardArt = () => {
                 id: record.id,
                 creditline: record.creditline,
                 imageCount: record.imagecount,
-                imageurl: record.primaryimageurl + `?height=250&width=250`,
+                imageurl: record.primaryimageurl,
                 culture: record.culture,
                 medium: record.medium,
                 title: record.title,
@@ -36,16 +34,30 @@ const HarvardArt = () => {
         }
     },[])
 
+    //user will be able to change the page to load more drawings
+    const handlePageChange = async (event) => {
+        event.preventDefault();
+    }
+
+    //if user wants to save the image to their inspirational board
+    const handleSaveImg = async (image) => {
+
+    }
+
     return (
         <div>
             {!loading && 
             items.map(record => (
                 <div>
-                    <h3>{record.title}</h3>
-                    <img src={record.imageurl}></img>
-                    <p>Medium: {record.medium}</p>
-                    <p>Culture: {record.culture}</p>
-                    <p>Credit: {record.creditline}</p>
+                    {record.imageurl ? (
+                        <div>
+                            <h3>{record.title}</h3>
+                            <img src={record.imageurl} width={250} height={250}></img>
+                            <p>Medium: {record.medium}</p>
+                            <p>Culture: {record.culture}</p>
+                            <p>Credit: {record.creditline}</p>
+                        </div>
+                    ) : null}
                 </div>
             ))}
         </div>
