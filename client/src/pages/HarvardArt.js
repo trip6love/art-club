@@ -2,7 +2,7 @@
 //import { searchArtMuseum } from '../utils/apiRoutes';
 import React, { useState, useEffect } from 'react';
 
-const MuseumAPI = () => {
+const HarvardArt = () => {
     //create state for holding return google api data
     const [ loading, setLoading] = useState(true);
     const [ items, setItems] = useState();
@@ -28,7 +28,7 @@ const MuseumAPI = () => {
     return (
         <>
             {!loading && (
-                console.log(items)
+                console.log(items.records)
             )}
             <p> API info here</p>
         </>
@@ -36,4 +36,4 @@ const MuseumAPI = () => {
 
 };
 
-export default MuseumAPI;
+export default HarvardArt;
