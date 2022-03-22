@@ -123,7 +123,9 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-weight: bolder;
+    
 }
+
 .btnFooter:hover {
     background-color: #E16541; /* Green */
     color: black;
@@ -135,6 +137,7 @@ body {
     font-size: 40px;
     text-align: center;
     padding-bottom: 50px;
+    
 }
 
 .ourCreators {
@@ -148,7 +151,7 @@ body {
 /* BEGIN LOGO */
 .paint {
     color: whitesmoke;
-    font-size: 300px;
+    font-size: 200px;
     
 }
 .brush {   
@@ -175,11 +178,10 @@ body {
     
 }
 
-/*footer { 
-    background-color: rgba(243, 198, 99, 0.363);
-    
+.footeritems {
+    padding: 30px;
 }
-*/
+
 .login {
     padding: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -288,4 +290,66 @@ p {
     font-size: 25px;
     padding-top: 10px;
 
+}
+
+/* BUTTONS AFTER LOGIN */
+
+.artboardbtn{
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 25%;
+
+}
+
+.profilebtn {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 25%;
+}
+
+.logoutbtn {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 25%;
+}
+
+.navbaritems {
+    padding: 30px;
+}
+
+/* ARTBOARD PAGE */
+
+.postlist {
+    padding-bottom: 250px;
+}
+
+.profilelist {
+    padding-bottom: 250px;
 }
