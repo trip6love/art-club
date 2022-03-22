@@ -34,14 +34,14 @@ const Profile = () => {
   return (
     <div>
       <div className="profilelist">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block" align="center">
+        <h2 className="viewpro" align="center">
         Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
       </div>
 
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
-          <PostList posts={user.posts} title={`${user.username}'s thoughts...`} />
+      <div className="postprofile">
+        <div >
+          <PostList  posts={user.posts} title={`${user.username}'s thoughts...`} />
         </div>
       </div>
     </div>
