@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.6.4",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "i": "^0.3.7",
     "jwt-decode": "^3.1.2",
+    "mongo": "^0.1.0",
     "mongoose": "^6.2.7",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",

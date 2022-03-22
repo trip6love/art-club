@@ -43,14 +43,14 @@ function SignUp () {
             <div align="center">
                 <form className = "">
 
-                    <h1 className=" ">Sign Up!</h1>
+                    <h1 className="signup-header ">Sign Up!</h1>
                         <p>
                             <input 
                                 className="input-form"
                                 placeholder="User Name"
                                 value={formState.username}
                                 name="username"
-                                nChange={InputChange}
+                                onChange={InputChange}
                                 type="text"
 
                             />
@@ -80,7 +80,7 @@ function SignUp () {
                 </form>
 
             <button className="btn" type="button" onClick={formSubmit}>Submit!</button>
-            {error && <div>Sign up failed</div>}
+            {error && <div className='error'>Sign up failed</div>}
         </div>
         </body>
     )
