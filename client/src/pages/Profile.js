@@ -1,6 +1,7 @@
 import { Redirect, useParams } from 'react-router-dom';
 
 import PostList from '../components/PostList';
+import InspirationList from '../components/InspirationList';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -44,6 +45,13 @@ const Profile = () => {
           <PostList posts={user.posts} title={`${user.username}'s thoughts...`} />
         </div>
       </div>
+
+      <div className="flex-row justify-space-between mb-3">
+        <div className="col-12 mb-3 col-lg-8">
+          <InspirationList inspirations={user.inspirations} />
+        </div>
+      </div>
+
     </div>
   );
 };

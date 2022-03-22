@@ -50,3 +50,32 @@ export const DELETE_COMMENT = gql`
     }
   }
 `;
+
+//save harvard image into inspirations board
+export const SAVE_HARVARD_IMG = gql`
+  mutation saveHarvardImg($input: ImageInput){
+    saveHarvardImg(input: $input){
+      username
+      inspirations {
+        id
+        creditline
+        imageUrl
+        culture
+        medium
+        title
+      }
+    }
+  }
+`;
+
+//remove harvard image from inspirations board
+export const REMOVE_HARVARD_IMG = gql`
+  mutation removeHarvardImg($id: ID!){
+    removeHarvardImg(id: $id){
+      username
+      inspirations{
+        id
+      }
+    }
+  }
+`;
