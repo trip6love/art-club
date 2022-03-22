@@ -34,11 +34,6 @@ const HarvardArt = () => {
         }
     },[])
 
-    //user will be able to change the page to load more drawings
-    const handlePageChange = async (event) => {
-        event.preventDefault();
-    }
-
     //if user wants to save the image to their inspirational board
     const handleSaveImg = async (image) => {
 
