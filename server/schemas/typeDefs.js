@@ -32,7 +32,6 @@ const typeDefs = gql`
 
   type HarvardImage {
     _id: ID
-    imageId: String
     creditline: String
     imageUrl: String
     culture: String
@@ -56,7 +55,7 @@ const typeDefs = gql`
       addComment(postId: ID!, commentBody: String!): Post
       deletePost(postId: ID!): User
       deleteComment(postId: ID!, commentId: ID!): Post
-      saveHarvardImg(imageId: String!, creditline: String, imageUrl: String!, culture: String, medium: String, title: String ): User
+      saveHarvardImg(creditline: String, imageUrl: String!, culture: String, medium: String, title: String ): User
       removeHarvardImg(inspirationId: ID!): User
   }
 

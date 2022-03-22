@@ -86,11 +86,11 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in');
         },
-        saveHarvardImg: async(parent,{imageId, creditline, imageUrl, culture, medium, title}, context) => {
+        saveHarvardImg: async(parent,{creditline, imageUrl, culture, medium, title}, context) => {
             if(context.user){
                 const userWithImg = await User.findByIdAndUpdate(
                     {_id: context.user._id},
-                    { $push: {inspirations: {imageId, creditline, imageUrl, culture, medium, title}}},
+                    { $push: {inspirations: {creditline, imageUrl, culture, medium, title}}},
                     {new: true}
                 )
 

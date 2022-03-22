@@ -53,6 +53,14 @@ export const QUERY_USER = gql`
                 createdAt
                 commentCount
             }
+            inspirations {
+                _id
+                creditline
+                imageUrl
+                culture
+                medium
+                title
+            }
         }
     }
 `;
@@ -77,6 +85,14 @@ export const QUERY_ME = gql`
                     commentBody
                     username
                 }
+            }
+            inspirations {
+                _id
+                creditline
+                imageUrl
+                culture
+                medium
+                title
             }
         }
     }

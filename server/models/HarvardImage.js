@@ -2,11 +2,6 @@ const { Schema } = require('mongoose');
 
 const harvardImgSchema = new Schema(
   {
-    imageId: {
-        type: String,
-        require: true,
-        unique: true,
-    },
     creditline: {
         type: String,
     },

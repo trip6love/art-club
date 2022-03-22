@@ -25,6 +25,10 @@ export const ADD_USER = gql`
   }
 `;
 
+//Create post
+
+//update post
+
 //must be logged in to use
 //needs to send the postID to deletePost
 //will return Username and post count
@@ -36,6 +40,25 @@ export const DELETE_POST = gql`
     }
   }
 `;
+
+//user must be logged in
+// needs postID and comment body
+export const ADD_COMMENT = gql`
+  mutation AddComment($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
+      _id
+      username
+      postTitle
+      postText
+      comments {
+        _id
+        commentBody
+      }
+    }
+  }
+`;
+
+//update Comment
 
 //must be logged in to use
 //needs to send both the postID and commentID 
@@ -53,29 +76,30 @@ export const DELETE_COMMENT = gql`
 
 //save harvard image into inspirations board
 export const SAVE_HARVARD_IMG = gql`
-  mutation saveHarvardImg($input: ImageInput){
-    saveHarvardImg(input: $input){
-      username
-      inspirations {
-        id
-        creditline
-        imageUrl
-        culture
-        medium
-        title
-      }
+mutation SaveHarvardImg($creditline: String, $imageUrl: String!,$culture: String, $medium: String, $title: String) {
+  saveHarvardImg(creditline: $creditline, imageUrl: $imageUrl,culture:$culture, medium: $medium, title: $title) {
+    username
+    inspirations {
+      _id
+      creditline
+      imageUrl
+      culture
+      medium
+      title
     }
   }
+}
 `;
 
 //remove harvard image from inspirations board
 export const REMOVE_HARVARD_IMG = gql`
-  mutation removeHarvardImg($id: ID!){
-    removeHarvardImg(id: $id){
+  mutation RemoveHarvardImg($inspirationId: ID!) {
+    removeHarvardImg(inspirationId: $inspirationId) {
       username
-      inspirations{
-        id
-      }
+      inspirations {
+        _id
+        imageUrl
+      }  
     }
   }
 `;

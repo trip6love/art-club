@@ -2,10 +2,10 @@
 //import { searchArtMuseum } from '../utils/apiRoutes';
 import React, { useState, useEffect } from 'react';
 import Auth from '../utils/auth';
-import { useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import {SAVE_HARVARD_IMG} from '../utils/mutations';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const HarvardArt = () => {
     const [saveHarvardImg, {error}] = useMutation(SAVE_HARVARD_IMG);
@@ -26,7 +26,6 @@ const HarvardArt = () => {
             console.log(data);
 
             const artData = data.records.map((record) => ({
-                id: record.id,
                 creditline: record.creditline,
                 imageUrl: record.primaryimageurl,
                 culture: record.culture,
@@ -42,11 +41,7 @@ const HarvardArt = () => {
     },[])
 
     //if user wants to save the image to their inspirational board
-    const handleSaveImg = async (id) => {
-
-        //find img in items state by matching the id
-        const imgToSave = items.find(records => records.id === id);
-        console.log(imgToSave);
+    const handleSaveImg = async (creditline, imageUrl, culture, medium, title) => {
 
         //get token
         const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -55,9 +50,11 @@ const HarvardArt = () => {
             return false;
         }
 
+        console.log(creditline, imageUrl, culture, medium, title);
+
         try {
-            const {data} = await saveHarvardImg({
-                variables: {input: imgToSave}
+            await saveHarvardImg({
+                variables: {creditline, imageUrl, culture, medium, title}
             });
         } catch (err){
             console.error(err);
@@ -72,11 +69,11 @@ const HarvardArt = () => {
                     {record.imageUrl ? (
                         <div>
                             <h3>{record.title}</h3>
-                            <img src={record.imageUrl} width={250} height={250}></img>
+                            <img alt='Image' src={record.imageUrl} width={250} height={250}></img>
                             <p>Medium: {record.medium}</p>
                             <p>Culture: {record.culture}</p>
                             <p>Credit: {record.creditline}</p>
-                            <Link onClick={ () => handleSaveImg(record.id)}> Save Image </Link>
+                            <button onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
                         </div>
                     ) : null}
                 </div>

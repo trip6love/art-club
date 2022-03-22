@@ -2,7 +2,8 @@ import React from 'react';
 //import { Link } from 'react-router-dom';
 
 //returns all the comments for a post
-const InspirationList = ({ inspirations }) => {
+const InspirationList = ( {inspirations} ) => {
+
   return (
     <div className="card mb-3">
         <div className="card-header">
@@ -11,7 +12,7 @@ const InspirationList = ({ inspirations }) => {
 
         <div className="card-body">
             {inspirations &&
-            inspirations.map(inspiration => (
+              inspirations.map(inspiration => (
               <div>
                   <h3>{inspiration.title}</h3>
                   <img src={inspiration.imageurl} width={250} height={250}></img>
