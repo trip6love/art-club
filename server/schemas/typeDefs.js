@@ -10,6 +10,7 @@ const typeDefs = gql`
     email: String
     postCount: Int
     posts: [Post]
+    inspirations: [HarvardImage]
   }
 
   type Post {
@@ -29,12 +30,22 @@ const typeDefs = gql`
     username: String
   }
 
+  type HarvardImage {
+    _id: ID
+    creditline: String
+    imageUrl: String
+    culture: String
+    medium: String
+    title: String
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
+    inspirations: [HarvardImage]
   }
 
   type Mutation {
@@ -44,6 +55,8 @@ const typeDefs = gql`
       addComment(postId: ID!, commentBody: String!): Post
       deletePost(postId: ID!): User
       deleteComment(postId: ID!, commentId: ID!): Post
+      saveHarvardImg(creditline: String, imageUrl: String!, culture: String, medium: String, title: String ): User
+      removeHarvardImg(inspirationId: ID!): User
   }
 
   type Auth {

@@ -9,6 +9,7 @@ const resolvers = {
             const userData = await User.findOne({ _id: context.user._id})
                 .select('-__v -password')
                 .populate('posts')
+                .populate('inspirations')
             return userData;
           }
           throw new AuthenticationError('Not Logged In');
@@ -26,13 +27,15 @@ const resolvers = {
       users: async() => {
         return User.find()
             .select('-__v -password')
-            .populate('posts');
+            .populate('posts')
+            .populate('inspirations')
       },
       //get user by username
       user: async(parent, {username}) => {
         return User.findOne({ username })
             .select('-__v -password')
-            .populate('posts');
+            .populate('posts')
+            .populate('inspirations')
       }
     },
     Mutation: {
@@ -72,7 +75,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in');
         },
-        addComment: async(parent, args, context) => {
+        addComment: async(parent,{postId, commentBody}, context) => {
             if(context.user){
                 const updatePost = await Post.findByIdAndUpdate(
                     {_id: postId},
@@ -80,6 +83,18 @@ const resolvers = {
                     { new: true, runValidators: true}
                 );
                 return updatePost;
+            }
+            throw new AuthenticationError('You need to be logged in');
+        },
+        saveHarvardImg: async(parent,{creditline, imageUrl, culture, medium, title}, context) => {
+            if(context.user){
+                const userWithImg = await User.findByIdAndUpdate(
+                    {_id: context.user._id},
+                    { $push: {inspirations: {creditline, imageUrl, culture, medium, title}}},
+                    {new: true}
+                )
+
+                return userWithImg;
             }
             throw new AuthenticationError('You need to be logged in');
         },
@@ -97,6 +112,17 @@ const resolvers = {
                     {$pull: {comments: {_id: commentId}}} 
                     );
                 return comment;
+            }
+            throw new AuthenticationError('You need to be logged in');
+        },
+        removeHarvardImg: async(parent, {inspirationId}, context) => {
+            if(context.user){
+                const userNoImg = await User.findByIdAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {inspirations: {_id: inspirationId}}},
+                    {new: true}
+                )
+                return userNoImg;
             }
             throw new AuthenticationError('You need to be logged in');
         }

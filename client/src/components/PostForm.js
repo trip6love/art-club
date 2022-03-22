@@ -1,5 +1,5 @@
 //This will be the form that allows users to create post
-import Rearct, { useState } from 'react'; 
+import React, { useState } from 'react'; 
 
 import { useMutation } from '@apollo/client'; 
 import { ADD_POST } from '../../src/utils/mutations'; 

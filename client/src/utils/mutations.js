@@ -25,35 +25,36 @@ export const ADD_USER = gql`
   }
 `;
 
-//must be logged in to use
-//needs to send the postID to deletePost
-//will return Username and post count
-
+//Create post
+//must be logged int
+//must pass postID and commentBody
 export const ADD_POST = gql`
-  mutation addPost($postText: String!) {
-    addPost(postText: $postText) {
+  mutation AddPost($postTitle: String!, $postText: String!) {
+    addPost(postTitle: $postTitle, postText: $postText) {
       _id
-      postText
-      createdAt
       username
-      postCount
-      comments {
-        _id
-      }
+      postTitle
+      postText
+      commentCount
     }
   }
 `;
 
+//update post
 export const UPDATE_POST = gql`
   mutation updatePost($postId: ID!, $postText: String!) {
     updatePost(postId: $postId, content: $postText) {
       _id
-      createdAt
+      username
+      postTitle
       postText
     }
   }
 `; 
 
+//must be logged in to use
+//needs to send the postID to deletePost
+//will return Username and post count
 export const DELETE_POST = gql`
   mutation deletePost($postId: ID!){
     deletePost(postId: $postId) {
@@ -63,34 +64,40 @@ export const DELETE_POST = gql`
   }
 `;
 
-//must be logged in to use
-//needs to send both the postID and commentID 
-//will return the post ID, username of post, postTitle and commentCount
-
+//user must be logged in
+// needs postID and comment body
 export const ADD_COMMENT = gql`
-  mutation addComment($commentId: ID!, $commentBody: String!) {
-    addComment(commentId: $commentId, commentBody: $commentBody) {
+  mutation AddComment($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
       _id
-      commentCount
+      username
+      postTitle
+      postText
       comments {
         _id
         commentBody
-        postTitle
-        username
       }
     }
   }
 `;
 
+//update Comment
 export const UPDATE_COMMENT = gql`
-  mutation updateComment($commentId: ID!, $commentBody: String!) {
-    updateComment(commentId: $commentId, commentBody: $commentBody) {
+  mutation updateComment($postId: ID!, $commentBody: String!) {
+    updateComment(commentId: $postId, commentBody: $commentBody) {
       _id
-      commentBody
+      username
+      comments {
+        _id
+        commentBody
+      }
     }
   }
 `; 
 
+//must be logged in to use
+//needs to send both the postID and commentID 
+//will return the post ID, username of post, postTitle and commentCount
 export const DELETE_COMMENT = gql`
   mutation deleteComment($postId: ID!, $commentId: ID!){
     deleteComment(postId: $postId, commentId: $commentId) {
@@ -102,3 +109,32 @@ export const DELETE_COMMENT = gql`
   }
 `;
 
+//save harvard image into inspirations board
+export const SAVE_HARVARD_IMG = gql`
+mutation SaveHarvardImg($creditline: String, $imageUrl: String!,$culture: String, $medium: String, $title: String) {
+  saveHarvardImg(creditline: $creditline, imageUrl: $imageUrl,culture:$culture, medium: $medium, title: $title) {
+    username
+    inspirations {
+      _id
+      creditline
+      imageUrl
+      culture
+      medium
+      title
+    }
+  }
+}
+`;
+
+//remove harvard image from inspirations board
+export const REMOVE_HARVARD_IMG = gql`
+  mutation RemoveHarvardImg($inspirationId: ID!) {
+    removeHarvardImg(inspirationId: $inspirationId) {
+      username
+      inspirations {
+        _id
+        imageUrl
+      }  
+    }
+  }
+`;

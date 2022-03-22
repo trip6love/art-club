@@ -60,4 +60,4 @@ const CommentForm = ({ commentId }) => {
     );
 };
 
-export default ReationForm; 
+export default CommentForm;
