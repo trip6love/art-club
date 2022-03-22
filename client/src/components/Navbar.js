@@ -15,8 +15,9 @@ function Navbar ({ currentPage, handlePageChange}) {
         <nav>
             {Auth.loggedIn() ? (
                 <>
-                <Link to="/artboard">Art Board</Link>
-                <Link to="/profile">My Profile</Link>
+                <Link to="/artboard">Art Blog</Link>
+                <Link to="/harvardart">Inspiration</Link>
+                <Link to="/profile">Me</Link>
                 <a href="/" onClick={logout}>Log Out</a>
                 </>
             ) : (

@@ -1,5 +1,6 @@
 import { Redirect, useParams } from 'react-router-dom';
 
+
 import PostList from '../components/PostList';
 import InspirationList from '../components/InspirationList';
 
@@ -10,6 +11,7 @@ import Auth from '../utils/auth';
 // url: /profile/<username> will display other profiles
 //url: /profile will display loggedin user profile
 const Profile = () => {
+
   const { username: userParam } = useParams();
 
   //checks to see what url is clicked on

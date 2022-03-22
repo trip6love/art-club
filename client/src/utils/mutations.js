@@ -26,6 +26,19 @@ export const ADD_USER = gql`
 `;
 
 //Create post
+//must be logged int
+//must pass postID and commentBody
+export const ADD_POST = gql`
+  mutation AddPost($postTitle: String!, $postText: String!) {
+    addPost(postTitle: $postTitle, postText: $postText) {
+      _id
+      username
+      postTitle
+      postText
+      commentCount
+    }
+  }
+`;
 
 //update post
 

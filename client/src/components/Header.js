@@ -15,8 +15,7 @@ function Header () {
             
            
             <Navbar></Navbar>
-        </header>
-        
+        </header>    
     )
 };
 
