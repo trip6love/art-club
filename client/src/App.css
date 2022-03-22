@@ -123,9 +123,19 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-weight: bolder;
+    animation-name: footercolor;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
     
 }
 
+@keyframes footercolor {
+    0% {background-color: #E16541;}
+    25% {background-color:#46e141 ;}
+    50% {background-color: #a063f0;}
+    75% {background-color: #f55a67;}
+    100% {background-color:#E16541 ;}
+}
 .btnFooter:hover {
     background-color: #E16541; /* Green */
     color: black;
@@ -181,6 +191,8 @@ body {
 .footeritems {
     padding: 30px;
 }
+
+
 
 .login {
     padding: 50px;
@@ -294,7 +306,7 @@ p {
 
 /* BUTTONS AFTER LOGIN */
 
-.artboardbtn{
+.artboardbtn  {
     border: none;
     background-color: #F18F43 ;
     padding: 13px 30px;
@@ -307,7 +319,13 @@ p {
     border-radius: 12px;
     font-weight: bolder;
     width: 20%;
+    
 
+}
+.artboardbtn:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+    cursor: pointer;
 }
 
 .profilebtn {
@@ -325,6 +343,12 @@ p {
     width: 20%;
 }
 
+.profilebtn:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+    cursor: pointer;
+}
+
 .logoutbtn {
     border: none;
     background-color: #F18F43 ;
@@ -338,6 +362,12 @@ p {
     border-radius: 12px;
     font-weight: bolder;
     width: 20%;
+}
+.logoutbtn:hover {
+    background-color: #E16541; /* Green */
+    color: black;
+    cursor: pointer;
+
 }
 
 .navbaritems {
