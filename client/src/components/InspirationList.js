@@ -15,7 +15,7 @@ const InspirationList = ( {inspirations} ) => {
               inspirations.map(inspiration => (
               <div>
                   <h3>{inspiration.title}</h3>
-                  <img src={inspiration.imageurl} width={250} height={250}></img>
+                  <img src={inspiration.imageUrl} width={250} height={250}></img>
                   <p>Medium: {inspiration.medium}</p>
                   <p>Culture: {inspiration.culture}</p>
                   <p>Credit: {inspiration.creditline}</p>
