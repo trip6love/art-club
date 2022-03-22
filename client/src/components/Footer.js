@@ -21,7 +21,7 @@ function Footer()  {
             <a href="https://github.com/RyleeThomas" className="footeritems">
             <button className="btnFooter">Rylee Thomas</button>
             </a>
-            <a href="https://github.com/trip6love" className="footeritems">
+            <a href="https://github.com/AlvinY4" className="footeritems">
             <button className="btnFooter">Alvin Yearby</button>
             </a>
             <a href="https://github.com/parkerjustice" className="footeritems">

@@ -42,6 +42,45 @@ const Profile = () => {
         </h2>
       </div>
 
+      <div class="create-post">
+        <div class="create-post-header">
+        <h2 class="create-post-title" 
+             id="post-header-title">
+              Create Your Content
+         </h2>
+  </div>
+
+  <form id="create-form" 
+  class="create-post-form" 
+  name="form">
+
+    <div class="create-post-content">
+      <textarea name="post" 
+      id="post-content" 
+      class="create-post-textarea scroller"
+      placeholder="Add your text here..">
+      </textarea>
+    </div>
+
+    <div class="create-post-actions post-actions">
+      <div 
+      class="post-actions-attachments">
+        <button type="button" 
+        class="btn post-actions-upload attachments-btn">
+        <label for="upload-image" class="post-actions-label">
+            upload image
+          </label>
+        </button>
+        <input type="file" id="upload-image" accept="image/*" multiple></input>
+      </div>
+
+      <div class="post-actions-create">
+        <button class="btn post-actions-publish">post</button>
+      </div>
+    </div>
+  </form>
+</div>
+
       <div className="postprofile">
         <div >
           <PostList  posts={user.posts} title={`${user.username}'s thoughts...`} />

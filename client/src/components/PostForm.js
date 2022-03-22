@@ -54,15 +54,15 @@ const PostForm = () => {
     return (
         <div>
           <p
-            className={`m-0 ${characterCount === 500 || error ? 'text-error' : ''}`}
-          >
+            className={`m-0 ${characterCount === 500 || error ? 'text-error' : ''}`}>
+              
             Character Count: {characterCount}/500
             {error && <span className="ml-2">Error</span>}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-stretch"
-            onSubmit={handleFormSubmit}
-          >
+            onSubmit={handleFormSubmit}>
+
             <textarea
               placeholder="Write a Post.."
               value={postText}
