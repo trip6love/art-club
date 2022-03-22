@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 //This returns all of the post
 const PostList = ({ posts, title }) => {
   if (!posts.length) {
-    return <h3>No Posts Yet</h3>;
+    return <h3 align="center" className='nopost'>No Posts Yet</h3>;
   }
 
   return (

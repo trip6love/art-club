@@ -41,6 +41,16 @@ export const ADD_POST = gql`
 `;
 
 //update post
+export const UPDATE_POST = gql`
+  mutation updatePost($postId: ID!, $postText: String!) {
+    updatePost(postId: $postId, content: $postText) {
+      _id
+      username
+      postTitle
+      postText
+    }
+  }
+`; 
 
 //must be logged in to use
 //needs to send the postID to deletePost
@@ -72,6 +82,18 @@ export const ADD_COMMENT = gql`
 `;
 
 //update Comment
+export const UPDATE_COMMENT = gql`
+  mutation updateComment($postId: ID!, $commentBody: String!) {
+    updateComment(commentId: $postId, commentBody: $commentBody) {
+      _id
+      username
+      comments {
+        _id
+        commentBody
+      }
+    }
+  }
+`; 
 
 //must be logged in to use
 //needs to send both the postID and commentID 

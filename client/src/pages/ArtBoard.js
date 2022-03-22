@@ -16,7 +16,7 @@ const Artboard = () => {
         <main>
            
             <div class="">
-            <div class="">
+            <div class="postlist">
                 {loading ? (
                 <div>Loading...</div>
                 ) : (
