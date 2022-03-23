@@ -1,6 +1,5 @@
 import { Redirect, useParams } from 'react-router-dom';
 
-
 import PostList from '../components/PostList';
 import PostForm from '../components/PostForm';
 import InspirationList from '../components/InspirationList';

@@ -1,8 +1,25 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
+import { useMutation} from '@apollo/client';
+import { DELETE_POST } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 //This returns all of the post
 const PostList = ({ posts, title }) => {
+  const [deletePost, {error}] = useMutation(DELETE_POST);
+
+  const handleRemovePost = async (postId) => {
+    try {
+      const {data} = await deletePost({
+        variables: {postId}
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   if (!posts.length) {
     return <h3 align="center" className='nopost'>No Posts Yet</h3>;
   }
@@ -35,6 +52,7 @@ const PostList = ({ posts, title }) => {
                 </p>
               </Link>
             </div>
+              <button onClick={ () => handleRemovePost(post._id)}>Delete</button>
           </div>
         ))}
     </div>

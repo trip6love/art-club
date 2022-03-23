@@ -24,15 +24,15 @@ const InspirationList = ( {inspirations} ) => {
             <span className="text-light">Inspirational Board</span>
         </div>
 
-        <div className="card-body">
+        <div className="grid-cols-3">
             {inspirations &&
               inspirations.map(inspiration => (
-              <div>
-                  <h3>{inspiration.title}</h3>
+              <div className='bg-teal-100 rounded-md p-6 m-0'>
+                  <h3 className='text-left'>{inspiration.title}</h3>
                   <img src={inspiration.imageUrl} width={250} height={250}></img>
-                  <p>Medium: {inspiration.medium}</p>
-                  <p>Culture: {inspiration.culture}</p>
-                  <p>Credit: {inspiration.creditline}</p>
+                  <p className='text-left'>Medium: {inspiration.medium}</p>
+                  <p className='text-left'>Culture: {inspiration.culture}</p>
+                  <p className='text-left'>Credit: {inspiration.creditline}</p>
                   <button onClick={ () => handleRemoveImg(inspiration._id)}> Remove </button>
               </div>
             ))}
