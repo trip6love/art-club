@@ -53,21 +53,36 @@ const PostForm = () => {
         }
     };
 
+    const handleImageChange = async (event) => {
+        setImage(event.target.value);
+        /*const {file} = event.target.value;
+
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await axios.post(
+            `https://api.cloudinary.com/v1_1/artclub/image/upload`,
+            formData,
+        );
+        setImage(response);
+        */
+    }
+
     //adds the post to user posts[]
     const handleFormSubmit = async (event) => {
         //event.preventDefault(); 
-        console.log("buttonclick");
+        //console.log(postImage);
 
         try {
             //add post to database
             await addPost({
                 variables: { postTitle, postText, postImage },
             });
-            console.log(postTitle, postText);
 
             //clear form value
             setText('');
             setTitle('');
+            setImage('');
             setTextCount(0);
             setTitleCount(0);
 
@@ -114,12 +129,12 @@ const PostForm = () => {
                     </div>
 
                     <div className="create-post-actions post-actions">
-                        <div className="post-actions-attachments">
-                            <button type="button" className="btn post-actions-upload attachments-btn">
-                                <label className="post-actions-label">Upload Image</label>
-                            </button>
-                            <input type="file" id="upload-image" accept="image/*" multiple></input>
-                        </div>
+                            <div className="post-actions-attachments">
+                                <button type="button" className="btn post-actions-upload attachments-btn">
+                                    <label htmlFor="upload-image" className="post-actions-label">Upload Image</label>
+                                    <input onChange={handleImageChange} value={postImage} type="file" id="upload-image" accept='/image*'></input>
+                                </button>
+                            </div>
 
                         <div className="post-actions-create">
                             <button type="button" className="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Submit</button>
