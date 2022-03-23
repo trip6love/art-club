@@ -43,13 +43,13 @@ const Profile = () => {
         </h2>
       </div>
 
+      <div className="">{!userParam && <PostForm />}</div>
+
       <div className="postprofile">
         <div >
           <PostList  posts={user.posts} title={`${user.username}'s thoughts...`} />
         </div>
       </div>
-
-      <div className="">{!userParam && <PostForm />}</div>
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">

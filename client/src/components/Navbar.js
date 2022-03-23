@@ -22,7 +22,7 @@ function Navbar ({ currentPage, handlePageChange}) {
                 </Link>
                 <Link to="/harvardart" className='navbaritems'>   
                     <button renderAs="button" className='profilebtn'>
-                        Inspiration
+                        Inspo
                     </button>
                 </Link>
                 <Link to="/profile" className='navbaritems'>   

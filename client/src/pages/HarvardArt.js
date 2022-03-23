@@ -73,13 +73,15 @@ const HarvardArt = () => {
                             <p className='text-style'>Medium: {record.medium}</p>
                             <p className='text-style'>Culture: {record.culture}</p>
                             <p className='text-style'>Credit: {record.creditline}</p>
+                            <div align="center ">
                             <button align="center" className="harvard-btn " onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
+                            </div>
                         </div>
                             
                     ) : null}
                 </div>
             ))}
-             <h1>link to harvard home page </h1>
+             <h1 align="center"> <a href="https://arts.harvard.edu/"> Harvard Homepage</a> </h1>
         </div>
     );
 };
