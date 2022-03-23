@@ -60,9 +60,11 @@ const PostList = ({ deleteP, posts, title }) => {
                 
               </Link>
             </div>
-              <button className="btn attachments-btn" onClick={ () => handleRemovePost(post._id)}>Delete</button>
-                          <div className='spacer'>
-            </div>
+              {deleteP ? (
+                <button className="btn attachments-btn" onClick={ () => handleRemovePost(post._id)}>Delete</button>
+              ): (
+                <></>
+              )}
           </div>
           
         ))}
