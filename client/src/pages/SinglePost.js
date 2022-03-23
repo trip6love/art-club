@@ -13,7 +13,7 @@ const SinglePost = props => {
     const { id: postId } = useParams();
 
     const { loading, data } = useQuery(QUERY_POST, {
-    variables: { id: postId }
+        variables: { id: postId }
     });
 
     const post = data?.post || {};
@@ -36,7 +36,7 @@ const SinglePost = props => {
                     <p>{post.postText}</p>
                 </div>
             </div>
-            {post.commentCount > 0 && <CommentList comments={post.comments} />}
+            {post.commentCount > 0 && <CommentList pName={post.username} pId={post._id} comments={post.comments} />}
             {Auth.loggedIn() && <CommentForm postId={post._id} />}
         </div>
     );
