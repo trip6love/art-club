@@ -24,16 +24,16 @@ const SinglePost = props => {
 
     return (
         <div>
-            <div className="card mb-3">
-                <p className="card-header">
-                    <span style={{ fontWeight: 700 }} className="text-light">
+            <div align="center" className="card mb-3">
+                <p className="text-post">
+                    <span style={{ fontWeight: 700 }} className="text-post">
                         {post.username}
                     </span>{' '}
                     post on {post.createdAt}
                 </p>
                 <div className="card-body">
-                    <p>{post.postTitle}</p>
-                    <p>{post.postText}</p>
+                    <p className='posttitle'>{post.postTitle}</p>
+                    <p className='posttext'>{post.postText}</p>
                 </div>
             </div>
             {post.commentCount > 0 && <CommentList comments={post.comments} />}

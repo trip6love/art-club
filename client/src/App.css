@@ -558,3 +558,30 @@ padding: 5px;
     padding: 0%;
     font-family:cursive;
 }
+
+.text-light {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.comments {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-post {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+.posttitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.posttext {
+ font-family:Arial, Helvetica, sans-serif ;
+ font-size: 25px;
+}
