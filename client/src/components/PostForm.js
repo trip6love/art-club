@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client'; 
 import { ADD_POST } from '../../src/utils/mutations'; 
-import { QUERY_POST, QUERY_USER } from '../../src/utils/queries'; 
+import { QUERY_ME, QUERY_POSTS } from '../../src/utils/queries'; 
 
 const PostForm = () => {
 
@@ -15,23 +15,24 @@ const PostForm = () => {
     const [textCount, setTextCount] = useState(0);
     
     const [addPost, {error}] = useMutation(ADD_POST, {
-
+        //update the new list
         update(cache, {data: { addPost } }) {
-
             try {
-                const { posts } = cache.readQuery({ query: QUERY_POST }); 
+                //could potentially not exist yet
+                const { posts } = cache.readQuery({ query: QUERY_POSTS }); 
                 cache.writeQuery({
-                    query: QUERY_POST,
+                    query: QUERY_POSTS, 
                     data: { posts: [addPost, ...posts] },
                 });
             } catch (e) {
-                console.error(e); 
-            }
+                console.log(e);
+            }  
 
-            const { user } = cache.readQuery({ query: QUERY_USER }); 
+            //update me object's cache, appending new post to end of array
+            const { me } = cache.readQuery({query: QUERY_ME });
             cache.writeQuery({
-                query: QUERY_USER, 
-                data: { user: { ...user, posts: [...user.posts, addPost ] } },
+                query: QUERY_ME,
+                data: { me: {...me, posts: [...me.posts, addPost]}}
             });
         },
     });
@@ -54,15 +55,22 @@ const PostForm = () => {
 
     //adds the post to user posts[]
     const handleFormSubmit = async (event) => {
-        event.preventDefault(); 
+        //event.preventDefault(); 
+        console.log("buttonclick");
 
         try {
+            //add post to database
             await addPost({
-                variables: { postText },
+                variables: { postTitle, postText, postImage },
             });
+            console.log(postTitle, postText);
 
+            //clear form value
             setText('');
-            //setCharacterCount(0);
+            setTitle('');
+            setTextCount(0);
+            setTitleCount(0);
+
         } catch (e) {
             console.error(e);
         }
@@ -70,50 +78,56 @@ const PostForm = () => {
 
     return (
         <div>
-            <div class="create-post">
-                <div class="create-post-header">
-                    <h2 class="create-post-title" id="post-header-title"> Create A Post</h2>
+            <div className="create-post">
+                <div className="create-post-header">
+                    <h2 className="create-post-title" id="post-header-title"> Create A Post</h2>
                 </div>
 
-                <form id="create-form" class="create-post-form" name="form">
+                <form id="create-form" className="create-post-form" name="form">
 
-                    <div class="create-post-content">
+                    <div className="create-post-content">
+                        <label className={`${titleCount === 280 || error ? 'text-error' : ''}`}>
+                            Character Count: {titleCount}/20
+                            {error && <span className=''>Something Went Wrong</span>}
+                        </label>
                         <textarea name="post" 
                             id="post-title" 
-                            class="create-post-textarea scroller"
+                            className="create-post-textarea scroller"
                             placeholder="Post Title"
                             value={postTitle}
                             onChange={handleTitleChange}
                         ></textarea>
                     </div>
 
-                    <div class="create-post-content">
+                    <div className="create-post-content">
+                        <label className={`${titleCount === 280 || error ? 'text-error' : ''}`}>
+                            Character Count: {textCount}/280
+                            {error && <span className=''>Something Went Wrong</span>}
+                        </label>
                         <textarea name="post" 
                             id="post-text" 
-                            class="create-post-textarea scroller"
+                            className="create-post-textarea scroller"
                             placeholder="Add your text here.."
                             value={postText}
                             onChange={handleTextChange}
                         ></textarea>
                     </div>
 
-                    <div class="create-post-actions post-actions">
-                        <div class="post-actions-attachments">
-                            <button type="button" class="btn post-actions-upload attachments-btn">
-                                <label for="upload-image" class="post-actions-label">Upload Image</label>
+                    <div className="create-post-actions post-actions">
+                        <div className="post-actions-attachments">
+                            <button type="button" className="btn post-actions-upload attachments-btn">
+                                <label className="post-actions-label">Upload Image</label>
                             </button>
                             <input type="file" id="upload-image" accept="image/*" multiple></input>
                         </div>
 
-                        <div class="post-actions-create">
-                            <button class="btn post-actions-publish" onSubmit={handleFormSubmit}>Submit</button>
+                        <div className="post-actions-create">
+                            <button type="button" className="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Submit</button>
                         </div>
                     </div>
                 </form>
 
             </div>
-
-            {error && <div>Something went wrong...</div>}
         </div>
       );
 };
