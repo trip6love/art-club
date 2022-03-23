@@ -33,26 +33,46 @@ const CommentForm = ({ commentId }) => {
 
     return (
         <div>
-            <p 
-              className={`m-0 ${characterCount === 500 || error ? 'text-error' : ""}`}
-            >
-                character Count: {characterCount}/500
-                {error && <span className="ml-2">Error...</span>}
-            </p>
-            <form 
-                className="flex-row justify-center justify-space-between-md align-stretch"
-                onSubmit={handleFormSubmit}
-            >
-                <textarea 
-                    placeholder="Leave a Comment"
-                    value={commentBody}
-                    className="form-input col-12 col-md-9"
-                    onChange={handleChange}
-                ></textarea>
 
-                <button className="btn col-12 col-md-3" type="submit">
-                    Submit
-                </button>
+            <div class="create-post">
+                <div class="create-post-header">
+                <h2 class="create-post-title" id="post-header-title"> Create A Post</h2>
+                </div>
+            </div>
+
+            <form id="create-form" class="create-post-form" name="form">
+
+                <div class="create-post-content">
+                    <textarea name="post" 
+                    id="post-title" 
+                    class="create-post-textarea scroller"
+                    placeholder="Post Title">
+                    </textarea>
+                </div>
+
+                <div class="create-post-content">
+                <textarea name="post" 
+                id="post-text" 
+                class="create-post-textarea scroller"
+                placeholder="Add your text here..">
+                </textarea>
+                </div>
+
+                <div class="create-post-actions post-actions">
+
+                <div class="post-actions-attachments">
+                    <button type="button" class="btn post-actions-upload attachments-btn">
+                    <label for="upload-image" class="post-actions-label">upload image</label>
+                    </button>
+                    <input type="file" id="upload-image" accept="image/*" multiple></input>
+                </div>
+
+                <div class="post-actions-create">
+                    <button class="btn post-actions-publish">Submit</button>
+                </div>
+
+                </div>
+
             </form>
 
             {error && <div>Something went wrong...</div>}
