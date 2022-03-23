@@ -1,7 +1,6 @@
 {
   "name": "art-club",
   "version": "0.1.0",
-  "homepage": "https://trip6love.github.io/art-club",
   "private": true,
   "proxy": "http://127.0.0.1:3001/",
   "dependencies": {
