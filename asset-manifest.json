@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/art-club/static/css/main.bb27abe7.css",
+    "main.css": "/art-club/static/css/main.b9c9762e.css",
     "main.js": "/art-club/static/js/main.fb7cbbc6.js",
     "static/js/787.20e233ec.chunk.js": "/art-club/static/js/787.20e233ec.chunk.js",
     "index.html": "/art-club/index.html",
-    "main.bb27abe7.css.map": "/art-club/static/css/main.bb27abe7.css.map",
+    "main.b9c9762e.css.map": "/art-club/static/css/main.b9c9762e.css.map",
     "main.fb7cbbc6.js.map": "/art-club/static/js/main.fb7cbbc6.js.map",
     "787.20e233ec.chunk.js.map": "/art-club/static/js/787.20e233ec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb27abe7.css",
+    "static/css/main.b9c9762e.css",
     "static/js/main.fb7cbbc6.js"
   ]
 }
