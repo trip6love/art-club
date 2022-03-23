@@ -37,11 +37,13 @@ const PostList = ({ posts, title }) => {
               <Link
                 to={`/profile/${post.username}`}
                 style={{ fontWeight: 700}}
-                className=""
+                className="create-user-header"
               >
                 {post.username}
               </Link>
+              <p className='padding-fix-comment'> 
               posted on {post.createdAt}
+              </p>
             </p>
             <div className="">
               <Link to={`/post/${post._id}`}>
@@ -56,10 +58,15 @@ const PostList = ({ posts, title }) => {
               </Link>
             </div>
               <button className="btn attachments-btn" onClick={ () => handleRemovePost(post._id)}>Delete</button>
+                          <div className='spacer'>
+            </div>
           </div>
+          
         ))}
     </div>
+    
   );
+  
 };
 
 export default PostList;

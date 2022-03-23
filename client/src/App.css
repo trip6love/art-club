@@ -395,6 +395,7 @@ p {
     border-radius: 12px;
     font-weight: bolder;
     width: 20%;
+    cursor: pointer;
 }
 
 .navbaritems {
@@ -452,6 +453,13 @@ ul {
   
   background-color: #cfbeaa;
   color: #3f5563;
+}
+.create-user-header {
+    padding: .2em .5em;
+    font-size: 20px;
+    border-radius: 45%;
+    background-color: #cfbeaa;
+    color: #3f5563;
 }
 .create-posted-header {
     padding: .2em .5em;
@@ -550,6 +558,9 @@ padding: 5px;
 .spacer {
  padding: 15px;
  background-color: #EDDDD4;
+}
+.padding-fix-comment {
+    padding: 0px;
 }
 /*Harvard Styles*/
 .text-style {
