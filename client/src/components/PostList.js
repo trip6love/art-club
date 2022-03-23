@@ -7,7 +7,10 @@ import { DELETE_POST } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 //This returns all of the post
-const PostList = ({ posts, title }) => {
+const PostList = ({ deleteP, posts, title }) => {
+
+  console.log(deleteP);
+  
   const [deletePost, {error}] = useMutation(DELETE_POST);
 
   const handleRemovePost = async (postId) => {
@@ -55,7 +58,11 @@ const PostList = ({ posts, title }) => {
                 
               </Link>
             </div>
-              <button  className="btn attachments-btn" onClick={ () => handleRemovePost(post._id)}>Delete</button>
+            {deleteP? (
+              <button onClick={ () => handleRemovePost(post._id)}>Delete</button>
+            ) : (
+              <></>
+            )}
           </div>
         ))}
     </div>

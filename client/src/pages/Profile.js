@@ -21,6 +21,13 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
 
+  //sets allowDelete button to display on users personal profile
+  const allowDelete = () => {
+    if(Auth.loggedIn() && Auth.getProfile().data.username === userParam){
+      return true;
+    }
+  } 
+
   //redirects if they are logged in and url /profile/<loggedinuser>
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/profile" />; 
@@ -30,6 +37,7 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
+  //redirect to homepage if not logged in
   if (!user?.username) {
     return <Redirect to="/" />;
   }
@@ -47,7 +55,7 @@ const Profile = () => {
 
       <div className="postprofile">
         <div >
-          <PostList  posts={user.posts} title={`${user.username}'s thoughts...`} />
+          <PostList deleteP={allowDelete} posts={user.posts} title={`${user.username}'s thoughts...`} />
         </div>
       </div>
 
