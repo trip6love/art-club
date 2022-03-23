@@ -8,8 +8,6 @@ import Auth from '../utils/auth';
 
 //This returns all of the post
 const PostList = ({ deleteP, posts, title }) => {
-
-  console.log(deleteP);
   
   const [deletePost, {error}] = useMutation(DELETE_POST);
 
