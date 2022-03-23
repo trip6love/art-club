@@ -22,11 +22,14 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
 
   //sets allowDelete button to display on users personal profile
-  const allowDelete = () => {
-    if(Auth.loggedIn() && Auth.getProfile().data.username === userParam){
+  const allowDelete = (user) => {
+    if(Auth.loggedIn() && Auth.getProfile().data.username === user){
       return true;
     }
   } 
+
+  console.log(userParam);
+  console.log(Auth.getProfile().data.username);
 
   //redirects if they are logged in and url /profile/<loggedinuser>
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -55,7 +58,7 @@ const Profile = () => {
 
       <div className="postprofile">
         <div >
-          <PostList deleteP={allowDelete} posts={user.posts} title={`${user.username}'s thoughts...`} />
+          <PostList deleteP={allowDelete(user.username)} posts={user.posts} title={`${user.username}'s thoughts...`} />
         </div>
       </div>
 
