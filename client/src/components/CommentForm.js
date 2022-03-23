@@ -74,7 +74,7 @@ const CommentForm = ({postId}) => {
 
                     <div class="create-post-actions post-actions">
                         <div class="post-actions-create">
-                            <button class="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Submit</button>
+                            <button class="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Post</button>
                         </div>
                     </div>
                 </form>

@@ -141,7 +141,8 @@ const PostForm = () => {
                         </div>
                     </div>
                 </form>
-
+            </div>
+            <div className='spacer'>
             </div>
         </div>
       );

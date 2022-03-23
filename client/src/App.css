@@ -387,6 +387,7 @@ p {
 .harvard-btn {
     border: none;
     background-color: #F18F43 ;
+    text-align: center;
     padding: 13px 30px;
     font-size: 15px;
     transition-duration: 0.4s;
@@ -411,7 +412,7 @@ p {
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 25px;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 /* ARTBOARD PAGE */
 
@@ -420,7 +421,7 @@ p {
 }
 
 .profilelist {
-    padding-bottom: 250px;
+    padding-bottom: px;
 }
 
 /*PROFILE PAGE*/
@@ -448,7 +449,7 @@ ul {
 
 .create-post-header {
   padding: .2em .5em;
-
+  
   background-color: #cfbeaa;
   color: #3f5563;
 }
@@ -546,7 +547,10 @@ padding: 5px;
 .is-hidden {
   display: none;
 }
-
+.spacer {
+ padding: 15px;
+ background-color: #EDDDD4;
+}
 /*Harvard Styles*/
 .text-style {
     text-align: center;
