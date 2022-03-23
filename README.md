@@ -45,7 +45,7 @@ Our App, Art Club, is a social media platform that serves as a communnity board 
 
 <img src=https://github.com/AlvinY4/art-club/blob/master/client/public/assets/artclub-loginscreenshot.png>
 
-### Inpiration Board 
+### Inspiration Board 
 
 <img src=https://github.com/AlvinY4/art-club/blob/master/client/public/assets/artclubinspo.gif>
 
