@@ -62,19 +62,20 @@ const HarvardArt = () => {
     };
 
     return (
-        <div>
+        <div className=''>
             {!loading && 
             items.map(record => (
                 <div>
                     {record.imageUrl ? (
                         <div>
-                            <h3>{record.title}</h3>
-                            <img alt='Image' src={record.imageUrl} width={250} height={250}></img>
-                            <p>Medium: {record.medium}</p>
-                            <p>Culture: {record.culture}</p>
-                            <p>Credit: {record.creditline}</p>
-                            <button onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
+                            <h3 className='create-harvard-header'>{record.title}</h3>
+                            <img className=" create-harvard-content" alt='Image' src={record.imageUrl} width={250} height={250}></img>
+                            <p className='text-style'>Medium: {record.medium}</p>
+                            <p className='text-style'>Culture: {record.culture}</p>
+                            <p className='text-style'>Credit: {record.creditline}</p>
+                            <button align="center" className="harvard-btn " onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
                         </div>
+                            
                     ) : null}
                 </div>
             ))}
