@@ -13,6 +13,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://parker47:butter47@clu
   //useCreateIndex: true,
   //useFindAndModify: false
 //});
-//'mongodb://localhost/art-club'
 
 module.exports = mongoose.connection;
