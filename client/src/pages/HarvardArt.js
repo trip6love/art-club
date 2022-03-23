@@ -78,6 +78,7 @@ const HarvardArt = () => {
                     ) : null}
                 </div>
             ))}
+             <h1>link to harvard home page </h1>
         </div>
     );
 };
