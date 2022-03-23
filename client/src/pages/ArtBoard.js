@@ -11,6 +11,8 @@ const Artboard = () => {
     const { loading, data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
 
+    const allowDelete = false;
+
     return (   
         
         <main>
@@ -21,7 +23,7 @@ const Artboard = () => {
                 <div>Loading...</div>
                 ) : (
                 //calls poslist componete to view all post
-                <PostList posts={posts} title="Some Posts ..." />
+                <PostList deleteP={allowDelete} posts={posts} title="Some Posts ..." />
                 )}
             </div>
             </div>

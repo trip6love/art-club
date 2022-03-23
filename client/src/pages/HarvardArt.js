@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import {SAVE_HARVARD_IMG} from '../utils/mutations';
+import env from "react-dotenv";
 
 //import { Link } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ const HarvardArt = () => {
     //retrieves the api url and stores the json data into setItems.
     useEffect( async () => {
         try {
-            const response = await fetch("https://api.harvardartmuseums.org/object?classification=21&size=100&apikey=d5fa0071-2bef-4273-9a6c-c6fad3b41af9");
+            const response = await fetch(`https://api.harvardartmuseums.org/object?classification=21&size=100&apikey=d5fa0071-2bef-4273-9a6c-c6fad3b41af9`);
     
             if(!response){
                 throw new Error('Something is wrong');
