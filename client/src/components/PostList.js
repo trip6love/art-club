@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 
 //This returns all of the post
 const PostList = ({ posts, title }) => {
+
   const [deletePost, {error}] = useMutation(DELETE_POST);
 
   const handleRemovePost = async (postId) => {
