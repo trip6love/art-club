@@ -23,7 +23,7 @@ const CommentForm = ({postId}) => {
                 console.log(e);
             } 
         },
-    });
+    }); 
 
     //handle text input change
     const handleCommChange = event => {
