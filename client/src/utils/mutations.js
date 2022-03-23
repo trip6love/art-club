@@ -32,10 +32,17 @@ export const ADD_POST = gql`
   mutation AddPost($postTitle: String!, $postText: String!) {
     addPost(postTitle: $postTitle, postText: $postText) {
       _id
+      createdAt
       username
       postTitle
       postText
       commentCount
+      comments {
+        _id
+        commentBody
+        createdAt
+        username
+      }
     }
   }
 `;

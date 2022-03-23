@@ -20,6 +20,11 @@ function Navbar ({ currentPage, handlePageChange}) {
                         Art Board
                     </button>
                 </Link>
+                <Link to="/harvardart" className='navbaritems'>   
+                    <button renderAs="button" className='profilebtn'>
+                        Inspiration
+                    </button>
+                </Link>
                 <Link to="/profile" className='navbaritems'>   
                     <button renderAs="button" className='profilebtn'>
                         My Profile
