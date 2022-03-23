@@ -78,7 +78,9 @@ const CommentForm = ({postId}) => {
                         </div>
                     </div>
                 </form>
+                
             </div>
+            
             {error && <div>Something went wrong...</div>}
         </div>
     );
