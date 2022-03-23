@@ -384,6 +384,17 @@ p {
     cursor: pointer;
 
 }
+.harvard-btn {
+    border: none;
+    background-color: #F18F43 ;
+    padding: 13px 30px;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-weight: bolder;
+    width: 20%;
+}
 
 .navbaritems {
     padding: 30px;
@@ -445,6 +456,12 @@ ul {
     padding: .2em .5em;
     background-color:#cfbeaa67 ;
 }
+.create-harvard-header {
+    padding: .2em .5em;
+    text-align: center;
+    background-color: #cfbeaa;
+    color: #3f5563;
+}
 .create-post-title {
   font-size: 20px;
 }
@@ -452,6 +469,15 @@ ul {
 .create-post-content {
   width: 100%;
   height: 50%;
+}
+.create-harvard-content {
+    width: 25%;
+    height: 12.5%;
+    display: block;  
+margin-left: auto;  
+margin-right: auto;  
+border: 15px ridge #cfbeaa;  
+padding: 5px;  
 }
 .create-post-textarea {
   width: 100%;
@@ -521,3 +547,9 @@ ul {
   display: none;
 }
 
+/*Harvard Styles*/
+.text-style {
+    text-align: center;
+    padding: 0%;
+    font-family:cursive;
+}
