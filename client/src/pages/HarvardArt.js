@@ -73,8 +73,9 @@ const HarvardArt = () => {
                             <p className='text-style'>Medium: {record.medium}</p>
                             <p className='text-style'>Culture: {record.culture}</p>
                             <p className='text-style'>Credit: {record.creditline}</p>
-                            <button className="harvard-btn" onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
+                            <button align="center" className="harvard-btn " onClick={ () => handleSaveImg(record.creditline, record.imageUrl, record.culture, record.medium, record.title)}> Save Image </button>
                         </div>
+                            
                     ) : null}
                 </div>
             ))}
