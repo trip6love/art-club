@@ -52,7 +52,7 @@ const PostForm = () => {
     };
 
     return (
-        <div>
+        <div className='test'>
           <p
             className={`m-0 ${characterCount === 500 || error ? 'text-error' : ''}`}>
               
