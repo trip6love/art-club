@@ -417,7 +417,8 @@ p {
 /* ARTBOARD PAGE */
 
 .postlist {
-    padding-bottom: 250px;
+    padding-bottom: 20px;
+    padding-top: 50px;
 }
 
 .profilelist {
