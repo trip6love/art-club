@@ -441,6 +441,10 @@ ul {
   background-color: #cfbeaa;
   color: #3f5563;
 }
+.create-posted-header {
+    padding: .2em .5em;
+    background-color:#cfbeaa67 ;
+}
 .create-post-title {
   font-size: 20px;
 }

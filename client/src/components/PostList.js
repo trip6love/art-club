@@ -8,12 +8,14 @@ const PostList = ({ posts, title }) => {
   }
 
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className='create-post'>
+      <div className='create-post-header'>
+      <h3 className="create-post-title" id="post-header-title">{title}</h3>
+      </div>
       {posts &&
         posts.map(post => (
           <div key={post._id} className="">
-            <p className="">
+            <p className="create-posted-header">
 
               <Link
                 to={`/profile/${post.username}`}
@@ -24,15 +26,16 @@ const PostList = ({ posts, title }) => {
               </Link>
               posted on {post.createdAt}
             </p>
-
             <div className="">
               <Link to={`/post/${post._id}`}>
-                <h4>{post.postTitle}</h4>
-                <p>{post.postText}</p>
-                <p className="">
+                <h4 className='create-post-textarea scroller'>{post.postTitle}</h4>
+                <p className='post'>{post.postText}</p>
+                
+                <p className="create-posted-header">
                   Comments: {post.commentCount} || Click to{' '}
                   {post.commentCount ? 'see' : 'start'} the discussion!
                 </p>
+                
               </Link>
             </div>
           </div>

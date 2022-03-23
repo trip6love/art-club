@@ -122,7 +122,7 @@ const PostForm = () => {
                         </div>
 
                         <div className="post-actions-create">
-                            <button type="button" className="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Submit</button>
+                            <button type="button" className="btn post-actions-publish" onClick={ () => handleFormSubmit()}>Post</button>
                         </div>
                     </div>
                 </form>
